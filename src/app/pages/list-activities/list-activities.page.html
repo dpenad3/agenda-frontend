@@ -1,0 +1,9 @@
+<app-header titulo="Lista de actividades"></app-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let a of activitiesList">
+      <ion-label>{{a.name}} de tipo {{a.activity_type.name}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

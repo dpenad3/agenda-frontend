@@ -1,0 +1,12 @@
+<app-header titulo="opciones"></app-header>
+
+<ion-content>
+
+  <ion-button *ngFor="let b of buttons" color="secundary" fill="outline"  [href]="b.redirecTo">
+    <div>
+      <ion-icon [name]="b.icon"></ion-icon><br>
+      {{b.name}}
+    </div>
+  </ion-button>
+
+</ion-content>
