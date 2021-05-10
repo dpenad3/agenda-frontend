@@ -1,0 +1,18 @@
+ion-button {
+    display: inline-block;
+    margin-block: 5px;
+    width: 36%;
+    height: 30%;
+    margin: 7%;
+    white-space: center;
+}
+
+ion-button div {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+ion-icon {
+    zoom: 8;
+}

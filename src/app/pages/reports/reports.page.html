@@ -1,0 +1,17 @@
+<app-header titulo="Reportar"></app-header>
+<ion-toolbar>
+<ion-buttons slot="start">
+  <ion-back-button text="Regresar" defaultHref="/type-act1"></ion-back-button>
+</ion-buttons>
+<ion-title class="ion-text-capitalize">Reportar</ion-title>
+</ion-toolbar>
+<ion-content>
+<ion-list style="text-align:center">
+  <ion-button *ngFor="let b of buttons" color="success" fill="outline"  [href]="b.redirecTo">
+    <div>
+      <ion-icon [name]="b.icon"></ion-icon><br>
+      {{b.name}}
+    </div>
+  </ion-button>
+</ion-list>
+</ion-content>

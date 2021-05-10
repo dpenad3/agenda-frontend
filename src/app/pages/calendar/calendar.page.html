@@ -1,0 +1,51 @@
+<app-header titulo="Calendario"></app-header>
+
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-back-button text="Regresar" defaultHref="/options"></ion-back-button>
+  </ion-buttons>
+  <ion-title class="ion-text-capitalize">Calendario</ion-title>
+  </ion-toolbar>
+
+<ion-content>
+
+  <ion-segment [(ngModel)]="calendar.mode">
+    <ion-segment-button value="month">
+      <ion-label>Mes</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="week">
+      <ion-label>Semana</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="day">
+      <ion-label>Dia</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-row>
+    <ion-col size="2">
+      <ion-button fill="clear" (click)="back()">
+        <ion-icon name="arrow-back" slot="icon-only" color="dark"></ion-icon>
+      </ion-button>
+    </ion-col>
+
+    <ion-col size="8" class="ion-text-center">
+      <h2>{{ viewTitle }}</h2>
+    </ion-col>
+
+    <ion-col size="2">
+      <ion-button fill="clear" (click)="next()">
+        <ion-icon name="arrow-forward" slot="icon-only" color="dark"></ion-icon>
+      </ion-button>
+    </ion-col>
+
+
+  </ion-row>
+
+  <calendar
+  [eventSource]="eventSource"
+  [calendarMode]="calendar.mode"
+  [currentDate]="calendar.currentDate"
+  (onTitleChanged)="CambiarTitulo($event)">
+  </calendar>
+
+</ion-content>

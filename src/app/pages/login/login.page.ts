@@ -30,4 +30,7 @@ export class LoginPage implements OnInit {
   ngOnInit() {
   }
 
+  navRegistro(){
+    this.router.navigate(['/register']);
+  }
 }

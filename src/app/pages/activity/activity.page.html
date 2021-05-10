@@ -1,24 +1,38 @@
 <app-header titulo="Gestionar actividad"></app-header>
 
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-back-button text="Regresar" defaultHref="/type-activity"></ion-back-button>
+  </ion-buttons>
+  <ion-title class="ion-text-capitalize">Gestionar Actividad</ion-title>
+  </ion-toolbar>
 <ion-content>
   <form [formGroup]="ionicForm" (ngSubmit)="submitForm()" novalidate>
 
     <ion-item lines="full">
-      <ion-label position="floating">Nombre</ion-label>
+      <ion-label position="floating">Nombre Actividad</ion-label>
       <ion-input formControlName="name" type="text" required></ion-input>
     </ion-item>
 
-    <ion-radio-group lines="full" formControlName="activity_type">
-      <ion-list-header>
-        <ion-label>Tipo de actividad</ion-label>
-      </ion-list-header>
-
-      <ion-item *ngFor="let t of activityType">
-        <ion-label>{{t.name}}</ion-label>
-        <ion-radio slot="start" [value]="t"></ion-radio>
+    <ion-list>
+      <ion-item>
+        <ion-label>Seleccione fecha de Actividad</ion-label>
+        <ion-datetime
+        placeholder="DD-MM-YYYY"
+          display-format="DDDD, DD-MM-YYYY"
+          month-names="Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre"
+          month-short-names="Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Sep, Oct, Nov, Dic"
+          day-names="Domingo, Lunes, Martes, Miercoles, Jueves, Viernes, Sabado"
+          day-short-names="Dom, Lun, Mar, Mie, Jue, Vie, Sab"
+          min="2000-01-01" max="2040-12-31"
+          formControlName="date">
+        </ion-datetime>
       </ion-item>
-    </ion-radio-group>
-
+    <ion-item>
+      <ion-label>Seleccione hora de Actividad</ion-label>
+      <ion-datetime placeholder="HH:MM" min="2000-01-01" max="2040-12-31" displayFormat= "HH:mm" formControlName="time"></ion-datetime>
+    </ion-item>
+    </ion-list>
     <ion-row>
       <ion-col>
         <ion-button type="submit" color="danger" expand="block">Submit</ion-button>

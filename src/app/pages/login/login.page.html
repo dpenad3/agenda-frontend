@@ -10,9 +10,12 @@
       <ion-label position="floating">Contraseña</ion-label>
       <ion-input formControlName="password" type="password" required></ion-input>
     </ion-item>
-    <ion-row>
+    <ion-row class="top-20">
       <ion-col>
-        <ion-button type="submit" color="danger" expand="block">Submit</ion-button>
+        <ion-button expand="full" type="submit" color="danger" expand="block">Submit</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="full" type="button" color="primary" (click)="navRegistro()">Registrarse</ion-button>
       </ion-col>
     </ion-row>
   </form>

@@ -8,7 +8,7 @@ import { CommonService } from './common.service';
 })
 export class ActivityTypeService extends CommonService<ActivityType> {
 
-    protected urlEndPoint:string ='http://localhost:8000/activitiestype/';
+    protected urlEndPoint:string ='http://localhost:8000/activitiestype';
 
     constructor(http: HttpClient) { 
         super(http);

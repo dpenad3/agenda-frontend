@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-options',
@@ -7,26 +7,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OptionsPage implements OnInit {
 
+  @Input() titulo: string;
+
   buttons: Button[]  = [
     {
       icon: 'alarm-outline',
-      name: 'Gestionar actividad',
-      redirecTo: '/activity'
+      name: 'GESTIONAR ACTIVIDAD',
+      redirecTo: '/type-activity'
     },
     {
       icon: 'mic-outline',
-      name: 'Reportar Actividad',
-      redirecTo: '/options'
+      name: 'REPORTAR ACTIVIDAD',
+      redirecTo: '/type-act1'
     },
     {
       icon: 'list-circle-outline',
-      name: 'Revisar actividades',
+      name: 'REVISAR ACTIVIDADES',
       redirecTo: '/list-activities'
     },
     {
       icon: 'calendar-outline',
-      name: 'Ver calendario',
-      redirecTo: '/options'
+      name: 'VER CALENDARIO',
+      redirecTo: '/calendar'
     },
   ]
 

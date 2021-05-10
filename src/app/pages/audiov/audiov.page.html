@@ -1,0 +1,28 @@
+<app-header titulo="Subir Audio o Video"></app-header>
+
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-back-button text="Regresar" defaultHref="/reports"></ion-back-button>
+  </ion-buttons>
+  <ion-title class="ion-text-capitalize">Subir Audio o Video</ion-title>
+  </ion-toolbar>
+
+<ion-content>
+  <ion-list style="text-align:center">
+  
+    <ion-row class="top-20">
+      <ion-col>
+        <ion-button expand="full" type="submit" color="warning" (click)="CaptureAudio()">Grabar Audio</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button expand="full" type="submit" color="warning" (click)="CaptureVideo()">Grabar Video</ion-button>
+      </ion-col>
+    </ion-row>
+    
+
+    <ion-button expand="full" type="submit" color="danger"
+             >SUBMIT</ion-button>
+
+</ion-list>
+
+</ion-content>

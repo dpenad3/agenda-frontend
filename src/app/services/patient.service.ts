@@ -8,7 +8,7 @@ import { CommonService } from './common.service';
 })
 export class PatientService extends CommonService<Patient> {
 
-    protected urlEndPoint:string ='http://localhost:8000/patients/';
+    protected urlEndPoint:string ='http://localhost:8000/patients';
 
     constructor(http: HttpClient) { 
         super(http);
