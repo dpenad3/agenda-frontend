@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { CalendarComponent } from 'ionic2-calendar';
 
+
 @Component({
   selector: 'app-calendar',
   templateUrl: './calendar.page.html',
@@ -21,6 +22,8 @@ export class CalendarPage implements OnInit {
   constructor() { }
 
   ngOnInit() { }
+
+  
 
   next(){
     this.myCal.slideNext();

@@ -8,7 +8,7 @@ import { CommonService } from './common.service';
 })
 export class EducationLevelService extends CommonService<EducationLevel> {
 
-    protected urlEndPoint:string ='http://localhost:8000/levels';
+    protected urlEndPoint:string ='https://backendagenda.herokuapp.com/levels';
 
     constructor(http: HttpClient) { 
         super(http);

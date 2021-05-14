@@ -1,21 +1,38 @@
-<app-header titulo="login"></app-header>
-
+<app-header titulo="Login"></app-header>
+<ion-toolbar>
+  <ion-title class="ion-text-capitalize">Login</ion-title>
+  </ion-toolbar>
 <ion-content>
+  <div class="ion-text-center">
+    <img [src]="vij" width="50%" height="50%" />
+  </div>
   <form [formGroup]="ionicForm" (ngSubmit)="submitForm()" novalidate>
-    <ion-item lines="full">
-      <ion-label position="floating">Email</ion-label>
-      <ion-input formControlName="email" type="email" required></ion-input>
-    </ion-item>
-    <ion-item lines="full">
-      <ion-label position="floating">Contraseña</ion-label>
-      <ion-input formControlName="password" type="password" required></ion-input>
-    </ion-item>
+    <ion-grid>
+      <ion-row color="primary" class="ion-justify-content-center">
+        <ion-col class="align-self-center" size-md="6" size-lg="5" size-xs="12">
+          <div class="ion-text-center">
+            <h3>Inicio de Sesión</h3>
+          </div>
+          <div class="ion-padding">
+            <ion-item>
+              <ion-label position="floating">Email</ion-label>
+              <ion-input formControlName="email" type="email" required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Contraseña</ion-label>
+              <ion-input formControlName="password" type="password" required></ion-input>
+            </ion-item>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    
     <ion-row class="top-20">
       <ion-col>
-        <ion-button expand="full" type="submit" color="danger" expand="block">Submit</ion-button>
+        <ion-button expand="full" type="submit" color="danger" expand="block">Entrar</ion-button>
       </ion-col>
       <ion-col>
-        <ion-button expand="full" type="button" color="primary" (click)="navRegistro()">Registrarse</ion-button>
+        <ion-button expand="full" type="button" color="primary" (click)="navRegistro()" expand="block">Registrarse</ion-button>
       </ion-col>
     </ion-row>
   </form>

@@ -8,6 +8,35 @@
   </ion-toolbar>
 
 <ion-content>
+
+  <ion-list style="text-align:center">
+
+    <ion-item>
+      <ion-label position="floating">Nombre Actividad</ion-label>
+      
+    </ion-item>
+  <ion-row>
+    <ion-col>
+      <ion-button expand="full"  color="warning" (click)="CaptureAudio()">Grabar Audio</ion-button>
+    </ion-col>
+    <ion-col>
+      <ion-button expand="full" type="submit" color="warning" (click)="CaptureVideo()">Grabar Video</ion-button>
+    </ion-col>
+  </ion-row>
+
+  <ion-list>
+    <ion-item *ngFor="let file of mediaFiles" tappable (click)="play(file)" text-wrap>
+      {{ file.name }}
+      <p>{{ file.size / 1000 / 1000 | number }} MB</p>
+    </ion-item>
+  </ion-list>
+
+  <video controls autoplay #myvideo></video>
+
+  <ion-button expand="full" type="submit" color="danger">SUBMIT</ion-button>
+
+  </ion-list>         
+  <!--
   <ion-list style="text-align:center">
   
     <ion-row class="top-20">
@@ -19,10 +48,18 @@
       </ion-col>
     </ion-row>
     
+    
+    <ion-item>
+      <audio [src]="audio" *ngIf="audio" ></audio>
+      </ion-item>
+
+      <ion-item>
+        <video [src]="video" *ngIf="video" ></video>
+        </ion-item>
 
     <ion-button expand="full" type="submit" color="danger"
              >SUBMIT</ion-button>
 
-</ion-list>
+</ion-list> -->
 
 </ion-content>

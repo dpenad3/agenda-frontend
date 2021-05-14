@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivitiesPatient } from 'src/app/models/ActivitiesPatient';
+import { ActivitiesPatientService } from 'src/app/services/activitiesPatient.service';
 
 @Component({
   selector: 'app-type-act1',
@@ -7,47 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TypeAct1Page implements OnInit {
 
-  buttons: Button[]  = [
-    {
-      icon: 'game-controller-outline',
-      name: 'JUEGOS',
-      redirecTo: '/reports'
-    },
-    {
-      icon: 'library-outline',
-      name: 'INTELECTUAL',
-      redirecTo: '/reports'
-    },
-    {
-      icon: 'barbell-outline',
-      name: 'EJERCICIO',
-      redirecTo: '/reports'
-    },
-    {
-      icon: 'people-circle-outline',
-      name: 'FAMILIAR',
-      redirecTo: '/reports'
-    },
-    {
-      icon: 'bandage-outline',
-      name: 'AUTOCUIDADO',
-      redirecTo: '/reports'
-    },
-    {
-      icon: 'medical-outline',
-      name: 'MEDICAMENTOS',
-      redirecTo: '/reports'
-    },
-  ]
+  activitiesList: ActivitiesPatient[];
 
-  constructor() { }
+  public getActivitiesList(){
+    this.service.list().subscribe(p => {
+      this.activitiesList = p;
+    });
+  }
+
+  constructor(protected service: ActivitiesPatientService) { }
 
   ngOnInit() {
+    this.getActivitiesList();
   }
-}
-  interface Button {
-    icon: string;
-    name: string;
-    redirecTo: string;
   
 }

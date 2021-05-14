@@ -27,6 +27,7 @@ export class LoginPage implements OnInit {
     protected route:ActivatedRoute
   ) { }
 
+  vij:string = '../assets/images/logo.PNG';
   ngOnInit() {
   }
 

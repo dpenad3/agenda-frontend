@@ -8,7 +8,7 @@ import { CommonService } from './common.service';
 })
 export class ActivitiesPatientService extends CommonService<ActivitiesPatient> {
 
-    protected urlEndPoint:string ='http://localhost:8000/activitiespatient';
+    protected urlEndPoint:string ='https://backendagenda.herokuapp.com/activitiespatient';
 
     constructor(http: HttpClient) { 
         super(http);

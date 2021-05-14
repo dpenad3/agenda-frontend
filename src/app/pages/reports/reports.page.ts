@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-reports',
@@ -6,16 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./reports.page.scss'],
 })
 export class ReportsPage implements OnInit {
+  id: number;
   buttons: Button[]  = [
     {
       icon: 'camera-sharp',
       name: 'IMAGEN',
-      redirecTo: '/cam'
+      redirecTo: '/cam/'
     },
     {
       icon: 'mic-circle-sharp',
       name: 'AUDIO/VIDEO',
-      redirecTo: '/audiov'
+      redirecTo: '/audiov/'
     },
     {
       icon: 'text-sharp',
@@ -25,9 +27,13 @@ export class ReportsPage implements OnInit {
     
   ]
 
-  constructor() { }
+  constructor(
+    protected router:Router, 
+    protected route:ActivatedRoute
+  ) { }
 
   ngOnInit() {
+    this.id = Number(this.route.snapshot.paramMap.get('id'));
   }
 }
   interface Button {
