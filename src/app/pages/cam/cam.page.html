@@ -7,13 +7,10 @@
   </ion-toolbar>
 
 <ion-content >
-
+  <form #formulario="ngForm" (ngSubmit)="onSubmitTemplate()">
   <ion-list>
 
-    <ion-item>
-      <ion-label position="floating">Nombre Actividad</ion-label>
-      
-    </ion-item>
+    
     
     <ion-row class="top-20">
       <ion-col>
@@ -32,4 +29,5 @@
   <ion-button expand="full" type="submit" color="danger"
              >SUBMIT</ion-button>
 </ion-list>
+</form>
 </ion-content>

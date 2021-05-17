@@ -1,8 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { File } from '@ionic-native/file/ngx';
 import { MediaCapture, MediaFile, CaptureVideoOptions } from '@ionic-native/media-capture/ngx'
 import { Media, MediaObject } from '@ionic-native/media/ngx';
 import { Storage } from '@ionic/storage'; 
+import { ActivitiesPatientService } from 'src/app/services/activitiesPatient.service';
+import Swal from 'sweetalert2';
 
 
 const MEDIA_FILES_KEY = 'mediaFiles';
@@ -15,10 +18,18 @@ export class AudiovPage implements OnInit {
 
   @ViewChild('myvideo') myVideo: any;
   mediaFiles= [];
-  constructor(private mediaCapture:MediaCapture, private storage:Storage, 
-    private media:Media, private file:File) { }
+  id: number;
+
+  constructor(private mediaCapture:MediaCapture, 
+    private storage:Storage, 
+    private media:Media, 
+    private file:File,
+    protected router:Router, 
+    protected route:ActivatedRoute,
+    protected service: ActivitiesPatientService) { }
 
   ngOnInit() {
+    this.id = Number(this.route.snapshot.paramMap.get('id'));
   }
 
   ionViewDidLoad() {
@@ -79,6 +90,17 @@ export class AudiovPage implements OnInit {
         this.storage.set(MEDIA_FILES_KEY, JSON.stringify(files));
       }
       this.mediaFiles = this.mediaFiles.concat(files);
+    });
+  }
+
+  onSubmitTemplate(){
+    this.service.delete(this.id).subscribe(m =>{
+      Swal.fire('Actividad reportada','success');
+      this.router.navigate(['/options']);
+    }, err=>{
+      if(err.status === 400){
+        Swal.fire('Error en el reporte',`${err}`,'error');
+      }
     });
   }
 }

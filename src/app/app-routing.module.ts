@@ -48,7 +48,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/reports/reports.module').then( m => m.ReportsPageModule)
   },
   {
-    path: 'reports:/id',
+    path: 'reports/:id',
     loadChildren: () => import('./pages/reports/reports.module').then( m => m.ReportsPageModule)
   },
   {
@@ -56,14 +56,25 @@ const routes: Routes = [
     loadChildren: () => import('./pages/text/text.module').then( m => m.TextPageModule)
   },
   {
+    path: 'text/:id',
+    loadChildren: () => import('./pages/text/text.module').then( m => m.TextPageModule)
+  },
+  {
     path: 'cam',
+    loadChildren: () => import('./pages/cam/cam.module').then( m => m.CamPageModule)
+  },
+  {
+    path: 'cam/:id',
     loadChildren: () => import('./pages/cam/cam.module').then( m => m.CamPageModule)
   },
   {
     path: 'audiov',
     loadChildren: () => import('./pages/audiov/audiov.module').then( m => m.AudiovPageModule)
   },
-  
+  {
+    path: 'audiov/:id',
+    loadChildren: () => import('./pages/audiov/audiov.module').then( m => m.AudiovPageModule)
+  },
 ];
 
 @NgModule({

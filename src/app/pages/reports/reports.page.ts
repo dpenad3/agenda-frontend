@@ -7,22 +7,23 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./reports.page.scss'],
 })
 export class ReportsPage implements OnInit {
-  id: number;
+  id:number = Number(this.route.snapshot.paramMap.get('id'));
+  
   buttons: Button[]  = [
     {
       icon: 'camera-sharp',
       name: 'IMAGEN',
-      redirecTo: '/cam/'
+      redirecTo: '/cam/'+this.id
     },
     {
       icon: 'mic-circle-sharp',
       name: 'AUDIO/VIDEO',
-      redirecTo: '/audiov/'
+      redirecTo: '/audiov/'+this.id
     },
     {
       icon: 'text-sharp',
       name: 'TEXTO',
-      redirecTo: '/text'
+      redirecTo: '/text/'+this.id
     },
     
   ]

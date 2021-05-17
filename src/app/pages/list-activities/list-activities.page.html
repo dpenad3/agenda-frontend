@@ -7,7 +7,7 @@
 <ion-content>
   <ion-list>
     <ion-item *ngFor="let a of activitiesList">
-      <ion-label>{{a.name}}</ion-label>
+      <ion-label>{{a.name}}  de tipo {{activityTypes[a.activity_type-1].name}}</ion-label>
     </ion-item>
   </ion-list>
 </ion-content>

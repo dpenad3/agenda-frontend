@@ -9,12 +9,11 @@
 
 <ion-content>
 
+  <form #formulario="ngForm" (ngSubmit)="onSubmitTemplate()">
+
   <ion-list style="text-align:center">
 
-    <ion-item>
-      <ion-label position="floating">Nombre Actividad</ion-label>
-      
-    </ion-item>
+    
   <ion-row>
     <ion-col>
       <ion-button expand="full"  color="warning" (click)="CaptureAudio()">Grabar Audio</ion-button>
@@ -24,14 +23,14 @@
     </ion-col>
   </ion-row>
 
-  <ion-list>
+  <!-- <ion-list>
     <ion-item *ngFor="let file of mediaFiles" tappable (click)="play(file)" text-wrap>
       {{ file.name }}
       <p>{{ file.size / 1000 / 1000 | number }} MB</p>
     </ion-item>
   </ion-list>
 
-  <video controls autoplay #myvideo></video>
+  <video controls autoplay #myvideo></video> -->
 
   <ion-button expand="full" type="submit" color="danger">SUBMIT</ion-button>
 
@@ -62,4 +61,5 @@
 
 </ion-list> -->
 
+  </form>
 </ion-content>
